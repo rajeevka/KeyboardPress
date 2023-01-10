@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #main{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+           
+            width: 40%;
+            height: 60vh;
+           
+        }
+        #one{
+            display: flex;
+            justify-content: center;
+            height: 50px;
+            width: 80%;
+            align-items: center;
+             border-radius: 2px;
+             box-shadow: 1px 1px 1px 1px rgb(132, 131, 131);
+             font-size: 30px;
+        }
+        .two{
+             color: green;
+            margin-top: -430px;
+            display: flex;
+            justify-content: center;
+             align-items: center;
+            width: 25%;
+            height: 100px;
+            text-align: center;
+             border-radius: 2px;
+             box-shadow: 1px 1px 1px 1px rgb(132, 131, 131);
+             font-size: 60px;
+        }
+        .keyboardone{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h3 id="one">Press any keyboard key</h3>
+        <h1 id="two"></h1>
+    </div>
+
+ <script>
+    var main=document.getElementById("main");
+    var two=document.createElement("h1")
+    two.classList.add("two") 
+    
+    window.addEventListener('keydown', (e)=>{
+           document.getElementById("one").innerHTML=`<h3 >You Pressed &nbsp;&nbsp; </h3>
+           <h3 class="keyboardone">${e.key}</h3>`
+            two.innerHTML = `${e.keyCode}`
+             main.appendChild(two)
+    })
+   
+    
+   
+ </script>
+
+    
+
+
+</body>
+</html>
